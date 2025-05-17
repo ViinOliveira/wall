@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Admin | Wall & Design</title>
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="./img/logosimples.png" alt="Wall & Design">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+
+        <!-- Botão orçamento (mobile) -->
+        <li class="mobile-only">
+          <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+        </li>
+
+        <!-- Bandeiras idioma (mobile) -->
+        <li class="language-switcher mobile-only">
+          <button onclick="trocarIdioma('pt')" aria-label="Português">
+            <img src="./img/brazil-icon-64.png" alt="PT">
+          </button>
+          <button onclick="trocarIdioma('en')" aria-label="English">
+            <img src="./img/united-icon-64.png" alt="EN">
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botão orçamento e bandeiras (desktop) -->
+    <div class="btn-language-group desktop-only">
+      <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+      <div class="language-switcher">
+        <button onclick="trocarIdioma('pt')" aria-label="Português">
+          <img src="./img/brazil-icon-64.png" alt="PT">
+        </button>
+        <button onclick="trocarIdioma('en')" aria-label="English">
+          <img src="./img/united-icon-64.png" alt="EN">
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="admin-layout">
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#editarPerfil" class="active">Editar Perfil</a></li>
+      <li><a href="#novoProjeto">Novo Projeto</a></li>
+      <li><a href="#novoAdmin">Novo Administrador</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <!-- Editar Perfil -->
+    <section id="editarPerfil" class="admin-section active">
+      <h2 class="titulo-centralizado">Editar Perfil</h2>
+
+      <div class="editar-perfil-container">
+        <div class="editar-perfil-avatar">
+          <img id="previewAvatar" src="img/default-avatar.png" alt="Avatar atual">
+          <label class="editar-perfil-label" for="avatarInput">Alterar imagem</label>
+          <input type="file" id="avatarInput" accept="image/*" hidden>
+        </div>
+
+        <form id="formPerfil" class="editar-perfil-form">
+          <input type="email" id="novoEmail" placeholder="Novo e-mail" required>
+          <input type="password" id="novaSenha" placeholder="Nova senha">
+          <button type="submit">Atualizar perfil</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Novo Projeto -->
+    <section id="novoProjeto" class="admin-section">
+      <h2 class="titulo-centralizado">Adicionar novo projeto</h2>
+      <form id="formProjeto">
+        <input type="text" id="nomeProjeto" placeholder="Nome do projeto" required>
+        <textarea id="descricaoProjeto" placeholder="Descrição do projeto" rows="4" required></textarea>
+
+        <select id="categoriaProjeto" required>
+          <option value="">Selecione uma categoria</option>
+          <option value="Playroom">Playroom</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Laundry">Laundry</option>
+          <option value="Living">Living</option>
+          <option value="Meeting room">Meeting room</option>
+          <option value="Office">Office</option>
+          <option value="Panels">Panels</option>
+          <option value="Pantry">Pantry</option>
+          <option value="Bar">Bar</option>
+          <option value="Bath">Bath</option>
+          <option value="Bedroom">Bedroom</option>
+          <option value="Business">Business</option>
+          <option value="Cinema">Cinema</option>
+          <option value="Closet">Closet</option>
+          <option value="Outros">Outros</option>
+        </select>
+
+        <div class="upload-area" id="uploadArea">
+          <p>Arraste as imagens aqui ou clique para selecionar</p>
+          <input type="file" id="imagemProjeto" accept="image/*" multiple hidden>
+          <button type="button" onclick="document.getElementById('imagemProjeto').click()">Selecionar Imagens</button>
+        </div>
+
+        <div id="previewContainer" class="preview-container"></div>
+        <button type="submit">Enviar Projeto</button>
+      </form>
+    </section>
+
+    <!-- Novo Administrador -->
+    <section id="novoAdmin" class="admin-section">
+      <h2>Cadastrar novo administrador</h2>
+      <form id="formAdmin" class="novo-admin-form">
+        <input type="email" id="novoAdminEmail" placeholder="E-mail do novo admin" required>
+        <button type="submit">Cadastrar admin</button>
+      </form>
+    </section>
+  </main>
+</div>
+
+<script type="module" src="./js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel do Usuário | Wall & Design</title>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/painel.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar fixa -->
+  <aside class="sidebar">
+    <div class="sidebar-avatar">
+      <img id="sidebarAvatar" src="img/default-avatar.png" alt="Avatar do usuário" class="avatar-header" />
+      <span id="sidebarNome">Usuário</span>
+    </div>
+    <nav>
+      <ul id="sidebarMenu">
+        <li class="active">
+          <a href="#" data-section="painelSection">
+            <!-- Home SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 11V20H20V11" stroke="currentColor" stroke-width="2"/><path d="M12 3L3 11H21L12 3Z" stroke="currentColor" stroke-width="2"/></svg>
+            Painel
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="projetosSection">
+            <!-- Grid SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/></svg>
+            Meus Projetos
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="perfilSection">
+            <!-- User SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="2"/></svg>
+            Meu Perfil
+          </a>
+        </li>
+        <li class="admin-only" style="display:none">
+          <a href="#" data-section="solicitacoesSection">
+            <!-- Envelope SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="2"/></svg>
+            Solicitações
+          </a>
+        </li>
+        <li class="admin-only" style="display:none">
+          <a href="#" data-section="novosProjetosSection">
+            <!-- Plus SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2"/></svg>
+            Novos Projetos
+          </a>
+        </li>
+        <li>
+          <a href="#" id="sidebarLogout">
+            <!-- Logout SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2"/><path d="M21 12H9" stroke="currentColor" stroke-width="2"/><path d="M3 21V3" stroke="currentColor" stroke-width="2"/></svg>
+            Sair
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="./img/logosimples.png" alt="Wall & Design">
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="contatos.html">Contato</a></li>
+            <li><a href="login.html" id="menuLogout">Logout</a></li>
+            <li class="mobile-only">
+              <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+            </li>
+            <li class="language-switcher mobile-only">
+              <button onclick="trocarIdioma('pt')" aria-label="Português">
+                <img src="./img/brazil-icon-64.png" alt="PT">
+              </button>
+              <button onclick="trocarIdioma('en')" aria-label="English">
+                <img src="./img/united-icon-64.png" alt="EN">
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="btn-language-group desktop-only">
+          <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+          <div class="language-switcher">
+            <button onclick="trocarIdioma('pt')" aria-label="Português">
+              <img src="./img/brazil-icon-64.png" alt="PT">
+            </button>
+            <button onclick="trocarIdioma('en')" aria-label="English">
+              <img src="./img/united-icon-64.png" alt="EN">
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- PAINEL PRINCIPAL -->
+      <div id="painelSection" class="section-page active">
+        <div class="painel-box">
+          <h2>Bem-vindo ao Painel</h2>
+          <div class="painel-user">
+            <img id="userPhoto" src="img/default-avatar.png" alt="Avatar do usuário" class="avatar-header">
+            <p class="user-nome" id="userName">Usuário</p>
+            <p class="user-email" id="userEmail">Seu e-mail</p>
+          </div>
+          <button id="btnLogout" class="btn-login">Sair da conta</button>
+        </div>
+      </div>
+      <!-- MEUS PROJETOS -->
+      <div id="projetosSection" class="section-page" style="display:none">
+        <div class="painel-box">
+          <h2>Meus Projetos</h2>
+          <p>Em breve: listagem de projetos do usuário.</p>
+        </div>
+      </div>
+      <!-- MEU PERFIL -->
+      <div id="perfilSection" class="section-page" style="display:none">
+        <div class="painel-box">
+          <h2>Meu Perfil</h2>
+          <p>Em breve: edição de perfil do usuário.</p>
+        </div>
+      </div>
+      <!-- ADMIN: SOLICITAÇÕES -->
+      <div id="solicitacoesSection" class="section-page" style="display:none">
+        <div class="painel-box">
+          <h2>Solicitações (Admin)</h2>
+          <p>Aqui o admin pode visualizar e gerenciar solicitações.</p>
+        </div>
+      </div>
+      <!-- ADMIN: NOVOS PROJETOS -->
+      <div id="novosProjetosSection" class="section-page" style="display:none">
+        <div class="painel-box">
+          <h2>Novos Projetos (Admin)</h2>
+          <p>Aqui o admin pode cadastrar e aprovar novos projetos.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Wall & Design. Todos os direitos reservados.</p>
+        <p><a href="./sobre.html">Sobre</a> | <a href="#contato">Contato</a> | <a href="./login.html">Login</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/painel.js"></script>
+  <script>
+    // Navegação SPA-like das seções
+    document.querySelectorAll('.sidebar nav ul li a[data-section]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Troca ativo na sidebar
+        document.querySelectorAll('.sidebar nav ul li').forEach(li => li.classList.remove('active'));
+        this.parentElement.classList.add('active');
+        // Troca de seção
+        document.querySelectorAll('.section-page').forEach(sec => sec.style.display = 'none');
+        document.getElementById(this.getAttribute('data-section')).style.display = 'block';
+      });
+    });
+
+    // Sincroniza avatar/nome no sidebar ao trocar user (assuma painel.js preenche userName/userPhoto)
+    window.addEventListener('DOMContentLoaded', () => {
+      const syncSidebar = () => {
+        const photo = document.getElementById('userPhoto');
+        const nome = document.getElementById('userName');
+        document.getElementById('sidebarAvatar').src = photo ? photo.src : "img/default-avatar.png";
+        document.getElementById('sidebarNome').textContent = nome ? nome.textContent : "Usuário";
+      };
+      setTimeout(syncSidebar, 500); // Firebase é assíncrono!
+    });
+  </script>
+</body>
+</html>

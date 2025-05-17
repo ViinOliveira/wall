@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projetos | Wall & Design</title>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/projetos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Cabeçalho -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="./img/logosimples.png" alt="Wall & Design">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+        <li id="loginMenu"><a href="login.html">Login</a></li>
+        <li id="avatarMenu" style="display: none; position: relative;">
+          <img id="userAvatar" src="img/default-avatar.png" alt="Avatar" class="avatar-header">
+          <ul class="dropdown-avatar" id="dropdownAvatar" style="display: none;">
+            <li><a href="painel.html">Meu Painel</a></li>
+            <li><a href="#" id="btnLogout">Sair</a></li>
+          </ul>
+        </li>
+        <!-- Botão orçamento (mobile) -->
+        <li class="mobile-only">
+          <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+        </li>
+        <!-- Bandeiras idioma (mobile) -->
+        <li class="language-switcher mobile-only">
+          <button onclick="trocarIdioma('pt')" aria-label="Português">
+            <img src="./img/brazil-icon-64.png" alt="PT">
+          </button>
+          <button onclick="trocarIdioma('en')" aria-label="English">
+            <img src="./img/united-icon-64.png" alt="EN">
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botão orçamento e bandeiras (desktop) -->
+    <div class="btn-language-group desktop-only">
+      <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+      <div class="language-switcher">
+        <button onclick="trocarIdioma('pt')" aria-label="Português">
+          <img src="./img/brazil-icon-64.png" alt="PT">
+        </button>
+        <button onclick="trocarIdioma('en')" aria-label="English">
+          <img src="./img/united-icon-64.png" alt="EN">
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section class="projetos-hero">
+      <h1>Conheça nossos projetos</h1>
+      <p>Veja alguns dos ambientes que já transformamos e escolha o seu favorito!</p>
+    </section>
+    <section class="projetos-lista">
+      <!-- Card Projeto 1 -->
+      <div class="projeto-card">
+        <img src="img/projeto1.jpg" alt="Cozinha Planejada Moderna" class="projeto-img">
+        <div class="projeto-info">
+          <h3>Cozinha Moderna</h3>
+          <p>Ambiente otimizado, iluminação LED e acabamento premium.</p>
+          <button class="btn-solicitar" onclick="abrirFormulario('Cozinha Moderna')">Solicitar Projeto</button>
+        </div>
+      </div>
+      <!-- Card Projeto 2 -->
+      <div class="projeto-card">
+        <img src="img/projeto2.jpg" alt="Quarto de Casal Elegante" class="projeto-img">
+        <div class="projeto-info">
+          <h3>Quarto Elegante</h3>
+          <p>Design sofisticado, conforto e integração de armários planejados.</p>
+          <button class="btn-solicitar" onclick="abrirFormulario('Quarto Elegante')">Solicitar Projeto</button>
+        </div>
+      </div>
+      <!-- Card Projeto 3 -->
+      <div class="projeto-card">
+        <img src="img/projeto3.jpg" alt="Home Office Planejado" class="projeto-img">
+        <div class="projeto-info">
+          <h3>Home Office</h3>
+          <p>Espaço funcional para produtividade, com móveis sob medida.</p>
+          <button class="btn-solicitar" onclick="abrirFormulario('Home Office')">Solicitar Projeto</button>
+        </div>
+      </div>
+      <!-- Adicione mais cards copiando o bloco acima -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Wall & Design. Todos os direitos reservados.</p>
+        <p><a href="./sobre.html">Sobre</a> | <a href="#contato">Contato</a> | <a href="./login.html">Login</a></p>
+    </div>
+  </footer>
+
+  <!-- Modal de Solicitação (simples) -->
+  <div id="modalSolicitar" class="modal-solicitar" style="display:none">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharFormulario()">&times;</span>
+      <h2>Solicitar Projeto</h2>
+      <form id="formSolicitar">
+        <input type="hidden" id="nomeProjeto" name="nomeProjeto" />
+        <label for="nomeCliente">Nome:</label>
+        <input type="text" id="nomeCliente" name="nomeCliente" required>
+        <label for="emailCliente">E-mail:</label>
+        <input type="email" id="emailCliente" name="emailCliente" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="3" placeholder="Me conte sobre o seu ambiente!"></textarea>
+        <button type="submit" class="btn-solicitar">Enviar Solicitação</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal: abrir com o nome do projeto
+    function abrirFormulario(projeto) {
+      document.getElementById('nomeProjeto').value = projeto;
+      document.getElementById('modalSolicitar').style.display = 'flex';
+    }
+    function fecharFormulario() {
+      document.getElementById('modalSolicitar').style.display = 'none';
+    }
+
+    // Simula envio (aqui integra com backend/email futuramente)
+    document.getElementById('formSolicitar').onsubmit = function(e) {
+      e.preventDefault();
+      alert("Solicitação enviada com sucesso! Em breve entraremos em contato.");
+      fecharFormulario();
+      this.reset();
+    }
+
+    // Fecha modal clicando fora
+    window.onclick = function(e) {
+      var modal = document.getElementById('modalSolicitar');
+      if (e.target === modal) fecharFormulario();
+    }
+  </script>
+
+  <script src="./js/sobre.js"></script>
+</body>
+</html>

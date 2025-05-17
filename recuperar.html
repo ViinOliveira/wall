@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperar Senha | Wall & Design</title>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/login.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="./img/logosimples.png" alt="Wall & Design">
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <div class="btn-language-group desktop-only">
+      <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+      <div class="language-switcher">
+        <button onclick="trocarIdioma('pt')" aria-label="Português">
+          <img src="./img/brazil-icon-64.png" alt="PT">
+        </button>
+        <button onclick="trocarIdioma('en')" aria-label="English">
+          <img src="./img/united-icon-64.png" alt="EN">
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="./img/logotipo 2.png" alt="Wall & Design Logo" class="logo-login">
+      <h2 class="login-title">Esqueci minha senha</h2>
+      <div class="titulo-bloco">Recuperar acesso</div>
+      <form id="formRecuperarSenha" class="login-form">
+        <div class="input-group">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="2"/></svg>
+          <input type="email" id="recuperarEmail" name="recuperarEmail" placeholder="Digite seu e-mail" required>
+        </div>
+        <button type="submit" class="btn-login">Recuperar Senha</button>
+        <p id="recuperarMsg" class="erro-login escondido"></p>
+        <div class="extras login-links">
+          <a href="login.html">Lembrou? Voltar ao login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+      <p>&copy; 2025 Wall & Design. Todos os direitos reservados.</p>
+      <p><a href="./sobre.html">Sobre</a> | <a href="#contato">Contato</a> | <a href="./login.html">Login</a></p>
+  </div>
+</footer>
+<script src="./js/esqueci-senha.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre | Wall & Design</title>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/sobre.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="./img/logosimples.png" alt="Wall & Design">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+        <li id="loginMenu"><a href="login.html">Login</a></li>
+        <li id="avatarMenu" style="display: none; position: relative;">
+          <img id="userAvatar" src="img/default-avatar.png" alt="Avatar" class="avatar-header">
+          <ul class="dropdown-avatar" id="dropdownAvatar" style="display: none;">
+            <li><a href="painel.html">Meu Painel</a></li>
+            <li><a href="#" id="btnLogout">Sair</a></li>
+          </ul>
+        </li>
+        <!-- Botão orçamento (mobile) -->
+        <li class="mobile-only">
+          <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+        </li>
+        <!-- Bandeiras idioma (mobile) -->
+        <li class="language-switcher mobile-only">
+          <button onclick="trocarIdioma('pt')" aria-label="Português">
+            <img src="./img/brazil-icon-64.png" alt="PT">
+          </button>
+          <button onclick="trocarIdioma('en')" aria-label="English">
+            <img src="./img/united-icon-64.png" alt="EN">
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botão orçamento e bandeiras (desktop) -->
+    <div class="btn-language-group desktop-only">
+      <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+      <div class="language-switcher">
+        <button onclick="trocarIdioma('pt')" aria-label="Português">
+          <img src="./img/brazil-icon-64.png" alt="PT">
+        </button>
+        <button onclick="trocarIdioma('en')" aria-label="English">
+          <img src="./img/united-icon-64.png" alt="EN">
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <img src="img/logotipo 2.png" alt="Logo Wall & Design 2" class="logo-sobre2">
+
+  <!-- ===== HERO/INTRO ===== -->
+  <section class="sobre-header">
+    <h1>Sobre a Wall & Design</h1>
+    <p>Transformando espaços com criatividade, qualidade e atenção aos detalhes.<br>
+    Sua casa, do seu jeito – feita por especialistas em móveis planejados.</p>
+  </section>
+
+    <!-- História da empresa -->
+  <div class="historia-box">
+    <h2>Nossa História</h2>
+    <p>
+      Fundada por apaixonados por design, a <b>Wall & Design</b> nasceu do sonho de transformar ambientes em verdadeiros lares. 
+      Desde o início, unimos a precisão do planejamento à sensibilidade do toque artesanal, sempre priorizando a qualidade, a inovação e o atendimento próximo ao cliente.
+      <br><br>
+      Nossos profissionais acumulam anos de experiência no mercado de móveis planejados, atuando com ética, transparência e compromisso com cada projeto.
+      <br><br>
+      Com soluções sob medida, acompanhamos nossos clientes do início ao fim – da criação à montagem – garantindo praticidade, sofisticação e funcionalidade em cada detalhe.
+    </p>
+  </div>
+
+  <!-- ===== VALORES & MISSÃO ===== -->
+  <section class="sobre-cards">
+    <div class="sobre-card">
+      <h3>Nossa Missão</h3>
+      <p>
+        Atender você com excelência, entregando móveis planejados que unem funcionalidade,
+        design sofisticado e materiais de alta qualidade.<br>
+        Personalizamos cada projeto para combinar com seu estilo de vida e as necessidades da sua família.
+      </p>
+    </div>
+    <div class="sobre-card">
+      <h3>Valores</h3>
+      <ul>
+        <li>🟡 Compromisso com a qualidade</li>
+        <li>🧡 Atendimento personalizado</li>
+        <li>🛠️ Inovação em design</li>
+        <li>🔒 Transparência e confiança</li>
+      </ul>
+    </div>
+    <div class="sobre-card">
+      <h3>Por que escolher a Wall & Design?</h3>
+      <ul>
+        <li>Equipe com anos de experiência no mercado</li>
+        <li>Projetos exclusivos e 100% personalizados</li>
+        <li>Acabamentos impecáveis e garantia de satisfação</li>
+        <li>Atendimento em toda a região</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== DIFERENCIAIS ===== -->
+  <section class="sobre-diferenciais">
+    <div class="sobre-dif-texto">
+      <h3>Conheça nossos diferenciais</h3>
+      <p>
+        Da ideia ao projeto pronto, cuidamos de cada etapa: <b>medição, desenho 3D, fabricação e instalação</b>.<br>
+        Você acompanha tudo e pode visualizar como o seu ambiente ficará antes mesmo da execução.
+      </p>
+      <p>Utilizamos apenas materiais certificados e parceiros de confiança.</p>
+      <a href="projetos.html" class="btn-destaque">Veja nossos projetos</a>
+    </div>
+    <div class="sobre-dif-img">
+      <img src="img/download (15).jpeg" alt="Projeto Wall & Design"/>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="sobre-depoimentos">
+    <h3>O que nossos clientes dizem</h3>
+    <div class="depoimentos-lista">
+      <div class="depoimento">
+        <p>"Superou minhas expectativas. Projeto moderno e entrega dentro do prazo!"</p>
+        <span>— Camila S.</span>
+      </div>
+      <div class="depoimento">
+        <p>"Equipe atenciosa, qualidade impecável. Recomendo para todos!"</p>
+        <span>— Roberto P.</span>
+      </div>
+      <div class="depoimento">
+        <p>"Excelente acabamento e atendimento personalizado."</p>
+        <span>— Ana Paula M.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Wall & Design. Todos os direitos reservados.</p>
+      <p>
+        <a href="./sobre.html">Sobre</a> |
+        <a href="contatos.html">Contato</a> |
+        <a href="login.html" id="footerLoginLink">Login</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Troca Login/Painel JS -->
+  <script>
+    // Exemplo: simulando usuário logado
+    // Troque pelo seu Firebase Auth!
+    const usuarioLogado = localStorage.getItem("usuarioLogado") === "true";
+    const painelLoginLink = document.getElementById("painelLoginLink");
+    const footerLoginLink = document.getElementById("footerLoginLink");
+    if (usuarioLogado && painelLoginLink) {
+      painelLoginLink.href = "painel.html";
+      painelLoginLink.innerText = "Painel";
+      if (footerLoginLink) {
+        footerLoginLink.href = "painel.html";
+        footerLoginLink.innerText = "Painel";
+      }
+    } else if (painelLoginLink) {
+      painelLoginLink.href = "login.html";
+      painelLoginLink.innerText = "Login";
+      if (footerLoginLink) {
+        footerLoginLink.href = "login.html";
+        footerLoginLink.innerText = "Login";
+      }
+    }
+
+    function trocarIdioma(lang) {
+      if (lang === "en") window.location.href = "sobre-en.html";
+      else window.location.href = "sobre.html";
+    }
+    window.trocarIdioma = trocarIdioma;
+  </script>
+
+  <script src="./js/sobre.js"></script>
+</body>
+</html>

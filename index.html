@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wall & Design - Móveis Planejados personalizados com qualidade e elegância.">
+  <title>Wall & Design</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="./img/logosimples.png" alt="Wall & Design">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+        <li id="loginMenu"><a href="login.html">Login</a></li>
+        <li id="avatarMenu" style="display: none; position: relative;">
+          <img id="userAvatar" src="img/default-avatar.png" alt="Avatar" class="avatar-header">
+          <ul class="dropdown-avatar" id="dropdownAvatar" style="display: none;">
+            <li><a href="painel.html">Meu Painel</a></li>
+            <li><a href="#" id="btnLogout">Sair</a></li>
+          </ul>
+        </li>
+        <!-- Botão orçamento (mobile) -->
+        <li class="mobile-only">
+          <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+        </li>
+        <!-- Bandeiras idioma (mobile) -->
+        <li class="language-switcher mobile-only">
+          <button onclick="trocarIdioma('pt')" aria-label="Português">
+            <img src="./img/brazil-icon-64.png" alt="PT">
+          </button>
+          <button onclick="trocarIdioma('en')" aria-label="English">
+            <img src="./img/united-icon-64.png" alt="EN">
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botão orçamento e bandeiras (desktop) -->
+    <div class="btn-language-group desktop-only">
+      <a href="#contato" class="btn-orcamento">Solicitar Orçamento</a>
+      <div class="language-switcher">
+        <button onclick="trocarIdioma('pt')" aria-label="Português">
+          <img src="./img/brazil-icon-64.png" alt="PT">
+        </button>
+        <button onclick="trocarIdioma('en')" aria-label="English">
+          <img src="./img/united-icon-64.png" alt="EN">
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="inicio">
+  <div class="hero-background"></div>
+  <div class="hero-content">
+    <h2>Soluções em móveis sob medida</h2>
+    <p>Transformamos seu ambiente com elegância e funcionalidade.</p>
+    <a href="#portifolio" class="btn-hero">Ver Projetos</a>
+  </div>
+  <!-- Setas de navegação -->
+  <button class="hero-arrow hero-arrow-left" aria-label="Anterior">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+  </button>
+  <button class="hero-arrow hero-arrow-right" aria-label="Próximo">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
+    </svg>
+  </button>
+</section>
+
+<!-- Sobre a Empresa -->
+<section class="sobre" id="sobre">
+  <div class="container">
+    <h2>Sobre a Wall & Design</h2>
+    <p>A Wall & Design é especializada na criação de móveis planejados de alta qualidade, combinando design inovador e funcionalidade. Com atendimento personalizado e tecnologia de ponta, transformamos cada espaço em algo único.</p>
+    <a href="./sobre.html" class="btn-hero">Conheça a empresa</a>
+  </div>
+</section>
+
+<!-- Galeria de Ambientes -->
+<section class="ambientes">
+  <div class="ambiente">
+    <img src="img/escritorio1.jpg" alt="Escritório moderno">
+    <h3>Projetos Corporativos</h3>
+  </div>
+  <div class="ambiente">
+    <img src="img/biblioteca.jpg" alt="Biblioteca planejada">
+    <h3>Ambientes Aconchegantes</h3>
+  </div>
+  <div class="ambiente">
+    <img src="img/escritorio2.jpg" alt="Home Office clean">
+    <h3>Home Office Inteligente</h3>
+  </div>
+</section>
+
+<!-- WhatsApp Flutuante -->
+<a href="https://wa.me/seunumero" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+  <img src="img/whatsapp.png" alt="WhatsApp Icon">
+</a>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Wall & Design. Todos os direitos reservados.</p>
+    <p><a href="./sobre.html">Sobre</a> | <a href="contatos.html">Contato</a> | <a href="#login">Login</a></p>
+  </div>
+</footer>
+
+<script>
+    const usuarioLogado = localStorage.getItem("usuarioLogado") === "true";
+    const painelLoginLink = document.getElementById("painelLoginLink");
+    const footerLoginLink = document.getElementById("footerLoginLink");
+    if (usuarioLogado && painelLoginLink) {
+      painelLoginLink.href = "painel.html";
+      painelLoginLink.innerText = "Painel";
+      if (footerLoginLink) {
+        footerLoginLink.href = "painel.html";
+        footerLoginLink.innerText = "Painel";
+      }
+    } else if (painelLoginLink) {
+      painelLoginLink.href = "login.html";
+      painelLoginLink.innerText = "Login";
+      if (footerLoginLink) {
+        footerLoginLink.href = "login.html";
+        footerLoginLink.innerText = "Login";
+      }
+    }
+
+    function trocarIdioma(lang) {
+      if (lang === "en") window.location.href = "sobre-en.html";
+      else window.location.href = "sobre.html";
+    }
+    window.trocarIdioma = trocarIdioma;
+
+</script>
+
+<!-- SEU SCRIPT PRINCIPAL: -->
+<script src="./js/script.js"></script>
+
+</body>
+</html>
